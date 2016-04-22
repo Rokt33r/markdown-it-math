@@ -1,7 +1,7 @@
 {
-  "name": "markdown-it-math",
+  "name": "@rokt33r/markdown-it-math",
   "version": "4.0.1",
-  "description": "Markdown-it plugin to include math in your document",
+  "description": "Markdown-it-math w/o optional dep",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/runarberg/markdown-it-math"
+    "url": "https://github.com/rokt33r/markdown-it-math"
   },
   "keywords": [
     "markdown-it",
@@ -30,12 +30,9 @@
   "author": "Rúnar Berg Baugsson Sigríðarson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/runarberg/markdown-it-math/issues"
+    "url": "https://github.com/rokt33r/markdown-it-math/issues"
   },
-  "homepage": "https://github.com/runarberg/markdown-it-math",
-  "optionalDependencies": {
-    "ascii2mathml": "^0.5.3"
-  },
+  "homepage": "https://github.com/rokt33r/markdown-it-math",
   "devDependencies": {
     "babelify": "^6.3.0",
     "browserify": "^11.1.0",
