@@ -2,10 +2,6 @@
 
 'use strict';
 
-var ascii2mathml = null;
-require('./lib/polyfills');
-
-
 function scanDelims(state, start, delimLength) {
   var pos = start, lastChar, nextChar, count, can_open, can_close,
       isLastWhiteSpace, isNextWhiteSpace,
@@ -200,28 +196,12 @@ function makeMath_block(open, close) {
 }
 
 function makeMathRenderer(renderingOptions) {
-  if (ascii2mathml === null) {
-    try {
-      ascii2mathml = require('ascii2mathml');
-    } catch (e) {
-      return renderingOptions && renderingOptions.display === 'block' ?
-        function(tokens, idx) {
-          return '<div class="math block">' + tokens[idx].content + '</div>';
-        } :
-        function(tokens, idx) {
-          return '<span class="math inline">' + tokens[idx].content + '</span>';
-        };
-    }
-  }
-
-  var mathml = ascii2mathml(Object.assign({}, renderingOptions));
-
   return renderingOptions && renderingOptions.display === 'block' ?
     function(tokens, idx) {
-      return mathml(tokens[idx].content) + '\n';
+      return '<div class="math block">' + tokens[idx].content + '</div>';
     } :
     function(tokens, idx) {
-      return mathml(tokens[idx].content);
+      return '<span class="math inline">' + tokens[idx].content + '</span>';
     };
 }
 
